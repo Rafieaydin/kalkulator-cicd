@@ -13,7 +13,7 @@ COPY style.css /usr/share/nginx/html/
 
 COPY script.js /usr/share/nginx/html/
 
-# Jika ada direktori 'tests' yang ingin ikut disajikan (opsional)
+# Jika ada direktori 'tests' yang ingin iku t disajikan (opsional)
 
 # COPY tests/ /usr/share/nginx/html/tests/
 
