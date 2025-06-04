@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '18' # atau versi LTS terb aru
 
-      # Langkah Build (jika ada, misal: npm install, npm run build)
+      # Langkah Build (jika ada, misal: npm ins tall, npm run build)
       # Untuk kalkulator statis ini, tidak ada build JS/CSS khusus
       # - name: 🔨 Build Aplikasi (jika perlu)
       #   run: echo "Tidak ada langkah build spesifik."
