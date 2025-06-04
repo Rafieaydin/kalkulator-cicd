@@ -1,5 +1,3 @@
-Di root proyek, buat file Dockerfile untuk mengemas aplikasi web statis kalkulator kita dengan Nginx.
-
 # Gunakan base image Nginx yang ringan
 
 FROM nginx:alpine
