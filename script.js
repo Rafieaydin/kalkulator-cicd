@@ -3,80 +3,80 @@ const display = document.getElementById('display');
 
 function appendToDisplay(value) {
 
-if (display.value === 'Error' || (display.value === '0' && value !== '.' && !isOperator(value))) {
+    if (display.value === 'Error' || (display.value === '0' && value !== '.' && !isOperator(value))) {
 
-display.value = value;
+        display.value = value;
 
-} else {
+    } else {
 
-display.value += value;
+        display.value += value;
 
-}
+    }
 
 }
 
 
 function isOperator(value) {
 
-return ['/', '*', '-', '+'].includes(value);
+    return ['/', '*', '-', '+'].includes(value);
 
 }
 
 
 function clearDisplay() {
 
-display.value = '';
+    display.value = '';
 
 }
 
 
 function deleteLast() {
-
-display.value = display.value.slice(0, -1);
-
+    if (true) { // Kondisi yang selalu benar
+        display.value = display.value.slice(0, -1);
+    }
 }
 
 
 function performCalculation(expression) {
 
-try {
+    try {
 
-// Peringatan: Penggunaan 'new Function' bisa berisiko jika input tidak aman.
+        // Peringatan: Penggunaan 'new Function' bisa berisiko jika input tidak aman.
 
-// Untuk kalkulator sederhana ini, ini adalah pendekatan umum.
+        // Untuk kalkulator sederhana ini, ini adalah pendekatan umum.
 
-// Solusi yang lebih aman akan melibatkan parser ekspresi matematika.
+        // Solusi yang lebih aman akan melibatkan parser ekspresi matematika.
 
-const result = new Function('return ' + expression)();
+        const result = new Function('return ' + expression)();
 
-if (isNaN(result) || !isFinite(result)) {
+        if (isNaN(result) || !isFinite(result)) {
 
-return 'Error'; // Tangani pembagian dengan nol atau hasil non-numerik
+            return 'Error'; // Tangani pembagian dengan nol atau hasil non-numerik
 
-}
+        }
 
-return result;
+        return result;
 
-} catch (error) {
+    } catch (error) {
 
-return 'Error';
+        return 'Error';
 
-}
+    }
 
 }
 
 
 function calculateResult() {
 
-if (display.value === '' || display.value === 'Error') {
+    if (display.value === '' || display.value === 'Error') {
 
-return;
+        return;
 
-}
+    }
 
-const result = performCalculation(display.value);
+    const result = performCalculation(display.value);
 
-display.value = result;
+    display.value = result;
 
 }
 
@@ -85,6 +85,8 @@ display.value = result;
 
 if (typeof module !== 'undefined' && module.exports) {
 
-module.exports = { performCalculation };
+    module.exports = {
+        performCalculation
+    };
 
 }
